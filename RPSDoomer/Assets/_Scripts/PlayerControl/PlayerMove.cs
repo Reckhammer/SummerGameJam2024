@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     public float movementSpeed = 20f;
+    public float momentumDamping = 5f;
     public float playerGravity = -10f;
 
     private CharacterController myController;
@@ -25,30 +26,43 @@ public class PlayerMove : MonoBehaviour
         GetInput();
         MovePlayer();
 
-        CheckForHeadBob();
         SetAnimations();
     }
 
     private void GetInput()
     {
-        inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")); // Get player inputs
-        inputVector.Normalize(); // Normalize the vector to prevent vectors being added during diagonal
-        inputVector = transform.TransformDirection(inputVector); // Make the movement relative to the player
+        if (IsMovementInputDown())
+        {
+            inputVector = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")); // Get player inputs
+            inputVector.Normalize(); // Normalize the vector to prevent vectors being added during diagonal
+            inputVector = transform.TransformDirection(inputVector); // Make the movement relative to the player
+
+            isWalking = true;
+        }
+        else
+        {
+            inputVector = Vector3.Lerp(inputVector, Vector3.zero, momentumDamping * Time.deltaTime);
+
+            isWalking = false;
+        }
 
         movementVector = (inputVector * movementSpeed) + (Vector3.up * playerGravity);
+    }
+
+    private bool IsMovementInputDown()
+    {
+        if (Input.GetKey(KeyCode.W) ||
+            Input.GetKey(KeyCode.A) ||
+            Input.GetKey(KeyCode.S) ||
+            Input.GetKey(KeyCode.D))
+            return true;
+        else
+            return false;
     }
 
     private void MovePlayer()
     {
         myController.Move(movementVector * Time.deltaTime);
-    }
-
-    private void CheckForHeadBob()
-    {
-        if (myController.velocity.magnitude > 0.1f)
-            isWalking = true;
-        else
-            isWalking = false;
     }
 
     private void SetAnimations()

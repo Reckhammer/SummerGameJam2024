@@ -25,7 +25,7 @@ public class PlayerMeleeAttack : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButton(0) && Time.time > nextTimeToFire)
+        if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire)
         {
             Attack();
         }

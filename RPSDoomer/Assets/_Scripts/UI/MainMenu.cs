@@ -22,11 +22,11 @@ public class MainMenu : MonoBehaviour
 
     public void OnMainMenuButtonClicked()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("MainMenu_Scene");
     }
 
     public void OnCreditsButtonClicked()
     {
-        SceneManager.LoadScene("Credits");
+        SceneManager.LoadScene("Credits_Scene");
     }
 }

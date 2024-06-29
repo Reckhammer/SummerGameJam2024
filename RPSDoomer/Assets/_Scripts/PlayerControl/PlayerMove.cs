@@ -11,6 +11,9 @@ public class PlayerMove : MonoBehaviour
     private Vector3 inputVector;
     private Vector3 movementVector;
 
+    public Animator camAnimator;
+    private bool isWalking = false;
+
     private void Awake()
     {
         myController = GetComponent<CharacterController>();
@@ -21,6 +24,9 @@ public class PlayerMove : MonoBehaviour
     {
         GetInput();
         MovePlayer();
+
+        CheckForHeadBob();
+        SetAnimations();
     }
 
     private void GetInput()
@@ -35,5 +41,18 @@ public class PlayerMove : MonoBehaviour
     private void MovePlayer()
     {
         myController.Move(movementVector * Time.deltaTime);
+    }
+
+    private void CheckForHeadBob()
+    {
+        if (myController.velocity.magnitude > 0.1f)
+            isWalking = true;
+        else
+            isWalking = false;
+    }
+
+    private void SetAnimations()
+    {
+        camAnimator.SetBool("IsWalking", isWalking);
     }
 }

@@ -26,7 +26,7 @@ public class Enemy_RockGrunt : Enemy
     protected override void Attack()
     {
         animController.PlayAttackAnimation();
-        nextTimeToAttack += Time.time + attackRate;
+        nextTimeToAttack = Time.time + attackRate;
     }
 
     private void OnTriggerStay(Collider collision)
@@ -39,7 +39,8 @@ public class Enemy_RockGrunt : Enemy
             {
                 //Debug.Log("Rock collided with a player. Attack!!!", this);
                 // Enemy hit a player 
-                collision.gameObject.GetComponent<Health>().DamageHealth(damage, damageType[0]);
+                if (collision.gameObject.TryGetComponent(out Health otherHealth))
+                    otherHealth.DamageHealth(damage, damageType[0]);
                 // Add knock back?
                 Attack();
             }

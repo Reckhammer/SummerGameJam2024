@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1974049255309371147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6304260531765472678}
+  m_Layer: 10
+  m_Name: ProjectileStartPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6304260531765472678
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974049255309371147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2316112804283698523}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5281896556957504836
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8,6 +39,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1731599409357577282, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      propertyPath: canLookVertically
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3018498765794351539, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_Name
       value: Enemy_PaperGrunt
@@ -76,8 +111,46 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5c8bc73e0e718ae4f9e79b98d4272ad5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1876900455529393831, guid: 3434d700875a48b428e46469eabc246b, type: 3}
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7595721809549318175, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6304260531765472678}
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3018498765794351539, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 7458217706147290136}
   m_SourcePrefab: {fileID: 100100000, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+--- !u!4 &2316112804283698523 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7595721809549318175, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+  m_PrefabInstance: {fileID: 5281896556957504836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6966730307155201271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3018498765794351539, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+  m_PrefabInstance: {fileID: 5281896556957504836}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7458217706147290136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966730307155201271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d4eb1190114f434085ef1277b248b29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 0}
+  damage: 1
+  damageType: 02000000
+  attackRate: 2
+  despawnTime: 3
+  maxAttackRange: 10
+  retreatRange: 3
+  projectileFirePoint: {fileID: 6304260531765472678}
+  projectilePrefab: {fileID: 1387571283938638020, guid: 844802dcb72995949b11f5dcf00aaf24, type: 3}

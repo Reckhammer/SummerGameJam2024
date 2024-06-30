@@ -27,6 +27,12 @@ public class MainMenu : MonoBehaviour
 
     public void OnCreditsButtonClicked()
     {
+        Debug.Log("Button");
         SceneManager.LoadScene("Credits_Scene");
+    }
+
+    public void OnMainSceneButtonClicked()
+    {
+        SceneManager.LoadScene("Level_01");
     }
 }

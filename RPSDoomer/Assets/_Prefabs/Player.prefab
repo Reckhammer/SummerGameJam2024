@@ -611,6 +611,7 @@ GameObject:
   - component: {fileID: 3589390319019158447}
   - component: {fileID: 253967154402527092}
   - component: {fileID: 5632929718822299862}
+  - component: {fileID: 4070044499102983271}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -702,6 +703,7 @@ MonoBehaviour:
   movementSpeed: 10
   momentumDamping: 5
   playerGravity: -10
+  canMove: 1
   camAnimator: {fileID: 5788878723850436165}
 --- !u!114 &253967154402527092
 MonoBehaviour:
@@ -733,3 +735,23 @@ MonoBehaviour:
   currentHealth: 0
   isDead: 0
   uiHealthBar: {fileID: 0}
+--- !u!114 &4070044499102983271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174365957904656813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40103abaa79c8714683535584b1df6dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hudElements:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  playerWeapons:
+  - {fileID: 5211779030340132758}
+  - {fileID: 8168858017717017026}
+  - {fileID: 8851912261161297846}

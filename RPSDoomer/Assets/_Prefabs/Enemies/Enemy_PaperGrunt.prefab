@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_PaperGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 3421010278803974116, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      propertyPath: m_Radius
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 3551639213956236568, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: segmentPrefab
       value: 

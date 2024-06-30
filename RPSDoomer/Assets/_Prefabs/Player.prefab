@@ -484,9 +484,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7419855248250308321}
+  - component: {fileID: 2549010802536436708}
   - component: {fileID: 3769314422300002010}
   - component: {fileID: 3589390319019158447}
   - component: {fileID: 253967154402527092}
+  - component: {fileID: 5632929718822299862}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -513,6 +515,29 @@ Transform:
   - {fileID: 2580593136372910009}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!136 &2549010802536436708
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174365957904656813}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &3769314422300002010
 CharacterController:
   m_ObjectHideFlags: 0
@@ -569,3 +594,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sensitivity: 1.5
   smoothing: 1.5
+--- !u!114 &5632929718822299862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9174365957904656813}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ee9a3af2ea4ce049a0331691dc9379c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
+  currentHealth: 0
+  isDead: 0

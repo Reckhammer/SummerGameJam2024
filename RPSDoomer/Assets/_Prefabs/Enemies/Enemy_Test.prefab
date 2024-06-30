@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3018498765794351539, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_Name
-      value: Enemy_Test Variant
+      value: Enemy_Test
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.259
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 14.99
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalRotation.w

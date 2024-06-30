@@ -22,7 +22,7 @@ public class AnimationController : MonoBehaviour
         health.Death += PlayDeathAnimation;
     }
 
-    private void PlayAttackAnimation()
+    public void PlayAttackAnimation()
     {
         animator.SetTrigger("Attack");
     }

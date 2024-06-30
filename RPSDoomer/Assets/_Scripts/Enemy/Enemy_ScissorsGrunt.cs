@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class Enemy_RockGrunt : Enemy
+public class Enemy_ScissorsGrunt : Enemy
 {
+    [Header("Scissors Enemy")]
+    public float playerAggroRange = 5f;
     private AnimationController animController;
 
     protected override void InitComponents()
@@ -17,7 +19,17 @@ public class Enemy_RockGrunt : Enemy
     {
         while (!health.isDead)
         {
-            agent.SetDestination(playerRef.position);
+            float playerDistance = Vector3.Distance(transform.position, playerRef.position);
+            if (playerDistance > playerAggroRange)
+            {
+                //Debug.Log("Player is out of Scissors' aggro range. Just chilling", this);
+                agent.SetDestination(this.transform.position);
+            }
+            else
+            {
+                //Debug.Log("Player is in Scissors' aggro range. Get em", this);
+                agent.SetDestination(playerRef.position);
+            }
 
             yield return null;
         }
@@ -31,13 +43,13 @@ public class Enemy_RockGrunt : Enemy
 
     private void OnTriggerStay(Collider collision)
     {
-        //Debug.Log("Rock collided with something", this);
+        //Debug.Log("Scissors collided with something", this);
         // Check if you collided with Player
         if (collision.gameObject.GetComponent<PlayerMove>())
         {
             if (Time.time > nextTimeToAttack)
             {
-                //Debug.Log("Rock collided with a player. Attack!!!", this);
+                //Debug.Log("Scissors collided with a player. Attack!!!", this);
                 // Enemy hit a player 
                 collision.gameObject.GetComponent<Health>().DamageHealth(damage, damageType[0]);
                 // Add knock back?

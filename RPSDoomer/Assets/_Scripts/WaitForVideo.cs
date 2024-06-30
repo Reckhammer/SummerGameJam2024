@@ -17,6 +17,6 @@ public class WaitForVideo : MonoBehaviour
     {
         yield return new WaitForSeconds(videoLength);
 
-        SceneManager.LoadScene("WorldMap");
+        SceneManager.LoadScene("Level_01");
     }
 }

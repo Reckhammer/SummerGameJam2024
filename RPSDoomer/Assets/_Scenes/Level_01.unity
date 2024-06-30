@@ -953,6 +953,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnCreditsButtonClicked
       objectReference: {fileID: 0}
+    - target: {fileID: 1857492532848747500, guid: 74595f00ddcf3374f96d82a2a8fc3cdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3261843166511248726, guid: 74595f00ddcf3374f96d82a2a8fc3cdf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1046,6 +1050,10 @@ PrefabInstance:
       value: GameoverCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 6734515089299314834, guid: 74595f00ddcf3374f96d82a2a8fc3cdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8457730156107513229, guid: 74595f00ddcf3374f96d82a2a8fc3cdf, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}

@@ -12,7 +12,7 @@ public class MainMenu : MonoBehaviour
 
     public void OnVideoSkipButtonClicked()
     {
-        SceneManager.LoadScene("WorldMap");
+        SceneManager.LoadScene("Level_01");
     }
 
     public void OnQuitClickedClicked()

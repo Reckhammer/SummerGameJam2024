@@ -22,6 +22,9 @@ public class PlayerRangeAttack : PlayerAttack
     {
         Debug.Log("Ranged Attack sequence engaged");
 
+        if (PlayerTargetManager.instance.enemiesInPlayerAtkRange.Count == 0)
+            return;
+
         // Damage Enemies in Range
         foreach (Enemy enemy in PlayerTargetManager.instance.enemiesInPlayerAtkRange)
         {

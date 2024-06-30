@@ -25,22 +25,12 @@ public class PlayerAttack : MonoBehaviour
 
     protected virtual void InitTrigger()
     {
-        
+        Debug.LogError("Init Trigger Function not implemented", this);
     }
 
     public virtual void StartAttack()
     {
-        //Debug.Log("Attack sequence engaged");
-
-        // Damage Enemies in Range
-        foreach (Enemy enemy in PlayerTargetManager.instance.enemiesInPlayerAtkRange)
-        {
-            // damage enemy
-            Debug.Log($"{enemy.gameObject.name} has been hit", this);
-        }
-
-        // Reset Timer
-        nextTimeToFire = Time.time + fireRate;
+        Debug.LogError("Start Attack Function not implemented", this);
     }
 
     private void OnTriggerEnter(Collider other)

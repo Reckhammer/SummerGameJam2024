@@ -5,12 +5,14 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     private Animator animator;
-    private Health health;
+    public Health health;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        health = GetComponent<Health>();
+
+        if (health == null)
+            health = GetComponent<Health>();
     }
 
     private void Start()

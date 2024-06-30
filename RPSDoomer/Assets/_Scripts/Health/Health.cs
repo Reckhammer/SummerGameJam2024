@@ -9,6 +9,7 @@ public class Health : MonoBehaviour
     public int maxHealth = 2;
     public int currentHealth;
     public bool isDead = false;
+    public HealthBar uiHealthBar;
 
     public event Action HealthChanged;
     public event Action MaxHealthChanged;
@@ -22,6 +23,12 @@ public class Health : MonoBehaviour
     protected virtual void InitHealth()
     {
         currentHealth = maxHealth;
+
+        if (uiHealthBar != null)
+        {
+            uiHealthBar.SetMaxHealth(maxHealth);
+            uiHealthBar.SetHealth(currentHealth);
+        }
     }
 
     public virtual void ChangeHealth(int change)
@@ -42,6 +49,9 @@ public class Health : MonoBehaviour
             Death?.Invoke();
         }
 
+        if (uiHealthBar != null)
+            uiHealthBar.SetHealth(currentHealth);
+
         HealthChanged?.Invoke();
     }
 
@@ -52,6 +62,8 @@ public class Health : MonoBehaviour
 
     public virtual void ChangeMaxHealth(int newMax)
     {
+        MaxHealthChanged?.Invoke();
+
         maxHealth = newMax;
 
         if (currentHealth > maxHealth)
@@ -59,6 +71,10 @@ public class Health : MonoBehaviour
         else if (currentHealth < maxHealth)
             currentHealth += maxHealth - currentHealth;
 
-        MaxHealthChanged?.Invoke();
+        if (uiHealthBar != null)
+        {
+            uiHealthBar.SetMaxHealth(maxHealth);
+            uiHealthBar.SetHealth(currentHealth);
+        }
     }
 }

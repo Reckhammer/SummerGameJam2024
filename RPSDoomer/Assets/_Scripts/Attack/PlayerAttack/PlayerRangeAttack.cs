@@ -21,7 +21,9 @@ public class PlayerRangeAttack : PlayerAttack
     public override void StartAttack()
     {
         Debug.Log("Ranged Attack sequence engaged");
-        
+
+        animController.PlayAttackAnimation();
+
         // Reset Timer
         nextTimeToFire = Time.time + fireRate;
 

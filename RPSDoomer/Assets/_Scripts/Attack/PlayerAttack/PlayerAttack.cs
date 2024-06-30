@@ -11,6 +11,9 @@ public class PlayerAttack : MonoBehaviour
     public float fireRate = 2f;
     protected float nextTimeToFire;
 
+    public GameObject hudElements;
+    protected AnimationController animController;
+
     public LayerMask targetRaycastHitLayer;
 
     protected BoxCollider attackRangeTrigger;
@@ -18,6 +21,9 @@ public class PlayerAttack : MonoBehaviour
     private void Awake()
     {
         attackRangeTrigger = GetComponent<BoxCollider>();
+
+        if (hudElements != null)
+            animController = GetComponent<AnimationController>();
     }
 
     private void Start()

@@ -21,7 +21,9 @@ public class PlayerMeleeAttack : PlayerAttack
     public override void StartAttack()
     {
         Debug.Log("Melee Attack sequence engaged");
-        
+
+        animController.PlayAttackAnimation();
+
         // Reset Timer
         nextTimeToFire = Time.time + fireRate;
 

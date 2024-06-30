@@ -18,9 +18,25 @@ public class AnimationController : MonoBehaviour
 
     private void Start()
     {
+        InitEventListeners();
+    }
+
+    private void OnDisable()
+    {
+        DestroyEventListeners();
+    }
+
+    public void InitEventListeners()
+    {
         // Setup attack listener
         health.HealthChanged += PlayDamagedAnimation;
         health.Death += PlayDeathAnimation;
+    }
+
+    public void DestroyEventListeners()
+    {
+        health.HealthChanged -= PlayDamagedAnimation;
+        health.Death -= PlayDeathAnimation;
     }
 
     public void PlayAttackAnimation()

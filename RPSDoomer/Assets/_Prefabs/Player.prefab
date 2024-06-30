@@ -11,13 +11,14 @@ GameObject:
   - component: {fileID: 4786955745988220712}
   - component: {fileID: 331429308720691853}
   - component: {fileID: 8168858017717017026}
+  - component: {fileID: 5526121529618820496}
   m_Layer: 7
-  m_Name: PlayerRangeWeapon
+  m_Name: PlayerPaperWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4786955745988220712
 Transform:
   m_ObjectHideFlags: 0
@@ -71,9 +72,24 @@ MonoBehaviour:
   forwardRange: 20
   verticalRange: 20
   fireRate: 1
+  hudElements: {fileID: 0}
   targetRaycastHitLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &5526121529618820496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2115640538545965910}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60d940541cb204bbf1e6a77e27d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  health: {fileID: 5632929718822299862}
 --- !u!1 &3980354229030521806
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +334,96 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &5508908356101966597
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3099043292160485825}
+  - component: {fileID: 4394566061831941557}
+  - component: {fileID: 8851912261161297846}
+  - component: {fileID: 918883127869428798}
+  m_Layer: 7
+  m_Name: PlayerScissorWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3099043292160485825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508908356101966597}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7419855248250308321}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &4394566061831941557
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508908356101966597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2, y: 3, z: 3}
+  m_Center: {x: 0, y: 0, z: 1.5}
+--- !u!114 &8851912261161297846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508908356101966597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 415b2ecbaec529841b2226d6798a02d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  damageType: 3
+  forwardRange: 3
+  verticalRange: 3
+  fireRate: 1
+  hudElements: {fileID: 0}
+  targetRaycastHitLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!114 &918883127869428798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5508908356101966597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60d940541cb204bbf1e6a77e27d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  health: {fileID: 5632929718822299862}
 --- !u!1 &6333679969090769860
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,8 +518,9 @@ GameObject:
   - component: {fileID: 2580593136372910009}
   - component: {fileID: 1287187705272122758}
   - component: {fileID: 5211779030340132758}
+  - component: {fileID: 9193746426278464167}
   m_Layer: 7
-  m_Name: PlayerMeleeWeapon
+  m_Name: PlayerRockWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -472,9 +579,24 @@ MonoBehaviour:
   forwardRange: 3
   verticalRange: 3
   fireRate: 1
+  hudElements: {fileID: 0}
   targetRaycastHitLayer:
     serializedVersion: 2
     m_Bits: 1024
+--- !u!114 &9193746426278464167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7025736106187985964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60d940541cb204bbf1e6a77e27d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  health: {fileID: 5632929718822299862}
 --- !u!1 &9174365957904656813
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,8 +633,9 @@ Transform:
   m_Children:
   - {fileID: 3210826503999318899}
   - {fileID: 561278232272486654}
-  - {fileID: 4786955745988220712}
   - {fileID: 2580593136372910009}
+  - {fileID: 4786955745988220712}
+  - {fileID: 3099043292160485825}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2549010802536436708

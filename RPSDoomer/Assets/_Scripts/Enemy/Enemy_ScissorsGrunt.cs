@@ -19,16 +19,20 @@ public class Enemy_ScissorsGrunt : Enemy
     {
         while (!health.isDead)
         {
-            float playerDistance = Vector3.Distance(transform.position, playerRef.position);
-            if (playerDistance > playerAggroRange)
+            if (agent.enabled)
             {
-                //Debug.Log("Player is out of Scissors' aggro range. Just chilling", this);
-                agent.SetDestination(this.transform.position);
-            }
-            else
-            {
-                //Debug.Log("Player is in Scissors' aggro range. Get em", this);
-                agent.SetDestination(playerRef.position);
+                float playerDistance = Vector3.Distance(transform.position, playerRef.position);
+                if (playerDistance > playerAggroRange)
+                {
+                    //Debug.Log("Player is out of Scissors' aggro range. Just chilling", this);
+                    agent.SetDestination(this.transform.position);
+                }
+                else
+                {
+                    //Debug.Log("Player is in Scissors' aggro range. Get em", this);
+                    agent.SetDestination(playerRef.position);
+                }
+
             }
 
             yield return null;
@@ -43,7 +47,7 @@ public class Enemy_ScissorsGrunt : Enemy
 
     private void OnTriggerStay(Collider collision)
     {
-        //Debug.Log("Scissors collided with something", this);
+        //Debug.Log($"Scissors collided with {collision.gameObject.name}", this);
         // Check if you collided with Player
         if (collision.gameObject.GetComponent<PlayerMove>())
         {

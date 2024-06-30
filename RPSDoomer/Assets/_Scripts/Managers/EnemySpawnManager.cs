@@ -23,8 +23,14 @@ public class EnemySpawnManager : MonoBehaviour
         playerRef = GameObject.FindAnyObjectByType<PlayerMove>().transform;
     }
 
+    private void Start()
+    {
+        StartCoroutine(StartWavesAfterDelay(10f));
+    }
+
     public void StartSpawnSequence(int enemiesMax, int numberToSpawn)
     {
+        Debug.Log("Spawning Enemies");
         enemiesOnField.Clear();
         maxEnemies = enemiesMax;
         enemiesToSpawn = numberToSpawn;
@@ -52,7 +58,7 @@ public class EnemySpawnManager : MonoBehaviour
                 NavMeshAgent enemyAgent = spawnedEnemy.GetComponent<NavMeshAgent>();
                 enemyAgent.enabled = false;
 
-                yield return new WaitForSeconds(.25f);
+                yield return new WaitForSeconds(.5f);
                 yield return null;
                 enemyAgent.enabled = true;
             }
@@ -88,6 +94,23 @@ public class EnemySpawnManager : MonoBehaviour
     private void OnEnemyDeath(Enemy deadEnemy)
     {
         enemiesOnField.Remove(deadEnemy);
+
+        if (enemiesOnField.Count == 0)
+        {
+            enemiesToSpawn++;
+
+            if (enemiesToSpawn >= maxEnemies)
+                maxEnemies += 5;
+
+            StartWavesAfterDelay(10f);
+        }
+    }
+
+    IEnumerator StartWavesAfterDelay(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+
+        StartSpawnSequence(maxEnemies, enemiesToSpawn);
     }
 
 #if UNITY_EDITOR

@@ -24,26 +24,30 @@ public class Enemy_PaperGrunt : Enemy
     {
         while (!health.isDead)
         {
-            float playerDistance = Vector3.Distance(transform.position, playerRef.position);
-            if (playerDistance > maxAttackRange)
+            if (agent.enabled)
             {
-                //Debug.Log("Player is out of Paper's Attack range. Get Closer", this);
-                agent.speed = originalSpeed;
-                agent.SetDestination(playerRef.position);
-            }
-            else if (playerDistance < retreatRange)
-            {
-                //Debug.Log("Player is too close to Paper. Run Away", this);
-                agent.speed = originalSpeed;
-                Vector3 retreatDirection = transform.position - playerRef.position;
-                Vector3 retreatPosition = transform.position + retreatDirection;
-                agent.SetDestination(retreatPosition);
-            }
-            else
-            {
-                //Debug.Log("Attacking Player");
-                agent.speed = 0f;
-                Attack();
+                float playerDistance = Vector3.Distance(transform.position, playerRef.position);
+                if (playerDistance > maxAttackRange)
+                {
+                    //Debug.Log("Player is out of Paper's Attack range. Get Closer", this);
+                    agent.speed = originalSpeed;
+                    agent.SetDestination(playerRef.position);
+                }
+                else if (playerDistance < retreatRange)
+                {
+                    //Debug.Log("Player is too close to Paper. Run Away", this);
+                    agent.speed = originalSpeed;
+                    Vector3 retreatDirection = transform.position - playerRef.position;
+                    Vector3 retreatPosition = transform.position + retreatDirection;
+                    agent.SetDestination(retreatPosition);
+                }
+                else
+                {
+                    //Debug.Log("Attacking Player");
+                    agent.speed = 0f;
+                    Attack();
+                }
+
             }
 
             yield return null;

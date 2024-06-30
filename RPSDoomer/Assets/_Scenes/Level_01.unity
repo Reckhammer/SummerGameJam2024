@@ -268,15 +268,15 @@ PrefabInstance:
     - target: {fileID: 4070044499102983271, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: hudElements.Array.data[0]
       value: 
-      objectReference: {fileID: 350382517}
+      objectReference: {fileID: 299293049}
     - target: {fileID: 4070044499102983271, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: hudElements.Array.data[1]
       value: 
-      objectReference: {fileID: 599533807}
+      objectReference: {fileID: 1430469103}
     - target: {fileID: 4070044499102983271, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: hudElements.Array.data[2]
       value: 
-      objectReference: {fileID: 1531345012}
+      objectReference: {fileID: 2105583770}
     - target: {fileID: 5211779030340132758, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: hudElements
       value: 
@@ -287,7 +287,7 @@ PrefabInstance:
       objectReference: {fileID: 244927828}
     - target: {fileID: 5632929718822299862, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: maxHealth
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5632929718822299862, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: uiHealthBar
@@ -352,7 +352,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9174365957904656813, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
+      insertIndex: 2
+      addedObject: {fileID: 593785661}
   m_SourcePrefab: {fileID: 100100000, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
 --- !u!4 &121210974 stripped
 Transform:
@@ -707,11 +710,6 @@ PrefabInstance:
 Animator:
   m_CorrespondingSourceObject: {fileID: 3259445956720652027, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
   m_PrefabInstance: {fileID: 304624103}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &350382517 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7025736106187985964, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
-  m_PrefabInstance: {fileID: 60313819}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &358205518
 MonoBehaviour:
@@ -1124,6 +1122,34 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.3122691, y: 5.0724573, z: 1.536177}
   m_Center: {x: -0.34386533, y: 2.5362296, z: 0}
+--- !u!1 &593785652 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9174365957904656813, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
+  m_PrefabInstance: {fileID: 60313819}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &593785661
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 593785652}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &594009159 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2392237540424674017, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
@@ -4377,6 +4403,11 @@ CapsuleCollider:
   m_Height: 21.6
   m_Direction: 1
   m_Center: {x: 0.0000018477439, y: 9.478916, z: -0.00000035762784}
+--- !u!1 &1430469103 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8455333342084936803, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
+  m_PrefabInstance: {fileID: 304624103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!136 &1449460616
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -5706,6 +5737,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.4489927, y: 1, z: 24.593998}
   m_Center: {x: -1.7244964, y: -0.5, z: 12.296999}
+--- !u!1 &2105583770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1917621645393048287, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
+  m_PrefabInstance: {fileID: 304624103}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

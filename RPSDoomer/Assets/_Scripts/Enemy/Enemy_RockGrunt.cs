@@ -17,7 +17,8 @@ public class Enemy_RockGrunt : Enemy
     {
         while (!health.isDead)
         {
-            agent.SetDestination(playerRef.position);
+            if (agent.enabled)
+                agent.SetDestination(playerRef.position);
 
             yield return null;
         }
@@ -31,7 +32,7 @@ public class Enemy_RockGrunt : Enemy
 
     private void OnTriggerStay(Collider collision)
     {
-        //Debug.Log("Rock collided with something", this);
+        //Debug.Log($"Rock collided with {collision.gameObject.name}", this);
         // Check if you collided with Player
         if (collision.gameObject.GetComponent<PlayerMove>())
         {

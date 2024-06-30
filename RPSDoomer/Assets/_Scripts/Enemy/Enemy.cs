@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     public int damage;
     public DamageType[] damageType;
     public float attackRate;
-    protected float nextTimeToAttack;
+    protected float nextTimeToAttack = 0f;
     protected NavMeshAgent agent;
     protected Transform playerRef;
 
@@ -26,7 +26,7 @@ public class Enemy : MonoBehaviour
         InitEventListeners();
 
         StartCoroutine(ActiveSequence());
-
+        StartCoroutine(RestartNavAgent());
         nextTimeToAttack = -1;
     }
 
@@ -42,6 +42,17 @@ public class Enemy : MonoBehaviour
     protected virtual void InitEventListeners()
     {
         health.Death += Died;
+    }
+
+    IEnumerator RestartNavAgent()
+    {
+        yield return null;
+
+        agent.enabled = false;
+
+        yield return new WaitForSeconds(1f);
+
+        agent.enabled = true;
     }
 
     protected virtual IEnumerator ActiveSequence()

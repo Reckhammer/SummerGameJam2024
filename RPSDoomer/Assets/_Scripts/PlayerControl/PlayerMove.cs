@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     public float movementSpeed = 20f;
     public float momentumDamping = 5f;
     public float playerGravity = -10f;
+    public bool canMove = true;
 
     private CharacterController myController;
     private Vector3 inputVector;
@@ -18,6 +19,11 @@ public class PlayerMove : MonoBehaviour
     private void Awake()
     {
         myController = GetComponent<CharacterController>();
+    }
+
+    private void Start()
+    {
+        GetComponent<Health>().Death += DisableMovement;
     }
 
     // Update is called once per frame
@@ -62,7 +68,18 @@ public class PlayerMove : MonoBehaviour
 
     private void MovePlayer()
     {
-        myController.Move(movementVector * Time.deltaTime);
+        if (canMove)
+            myController.Move(movementVector * Time.deltaTime);
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
+    }
+
+    public void DisableMovement()
+    {
+        canMove = false;
     }
 
     private void SetAnimations()

@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMeleeAttack : MonoBehaviour
+public class PlayerAttack : MonoBehaviour
 {
     public float forwardRange = 2f;
     public float verticalRange = 2f;
     public float fireRate = 2f;
-    private float nextTimeToFire;
+    protected float nextTimeToFire;
 
-    public LayerMask raycastHitLayer;
+    public LayerMask targetRaycastHitLayer;
 
-    private BoxCollider attackRangeTrigger;
+    protected BoxCollider attackRangeTrigger;
 
     private void Awake()
     {
@@ -23,23 +23,14 @@ public class PlayerMeleeAttack : MonoBehaviour
         InitTrigger();
     }
 
-    private void Update()
+    protected virtual void InitTrigger()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time > nextTimeToFire)
-        {
-            Attack();
-        }
+        
     }
 
-    private void InitTrigger()
+    public virtual void StartAttack()
     {
-        attackRangeTrigger.size = new Vector3(2, verticalRange, forwardRange);
-        attackRangeTrigger.center = new Vector3(0, 0, forwardRange * 0.5f);
-    }
-
-    private void Attack()
-    {
-        Debug.Log("Fire sequence engaged");
+        //Debug.Log("Attack sequence engaged");
 
         // Damage Enemies in Range
         foreach (Enemy enemy in PlayerTargetManager.instance.enemiesInPlayerAtkRange)
@@ -67,4 +58,13 @@ public class PlayerMeleeAttack : MonoBehaviour
             PlayerTargetManager.instance.RemoveEnemy(collidedEnemy);
         }
     }
+
+#if UNITY_EDITOR
+    [ContextMenu("Set Collider to Range")]
+    public void SetColliderToRange()
+    {
+        attackRangeTrigger = GetComponent<BoxCollider>();
+        InitTrigger();
+    }
+#endif
 }

@@ -66,10 +66,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1f518adccbe2e4490470dfd49f7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardRange: 2
+  forwardRange: 20
   verticalRange: 20
   fireRate: 1
-  raycastHitLayer:
+  targetRaycastHitLayer:
     serializedVersion: 2
     m_Bits: 1024
 --- !u!1 &3980354229030521806
@@ -468,7 +468,7 @@ MonoBehaviour:
   forwardRange: 3
   verticalRange: 3
   fireRate: 1
-  raycastHitLayer:
+  targetRaycastHitLayer:
     serializedVersion: 2
     m_Bits: 1024
 --- !u!1 &9174365957904656813

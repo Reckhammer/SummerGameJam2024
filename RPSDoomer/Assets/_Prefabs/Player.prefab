@@ -66,6 +66,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e1f518adccbe2e4490470dfd49f7310, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  damageType: 2
   forwardRange: 20
   verticalRange: 20
   fireRate: 1
@@ -465,6 +467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415b2ecbaec529841b2226d6798a02d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 1
+  damageType: 1
   forwardRange: 3
   verticalRange: 3
   fireRate: 1

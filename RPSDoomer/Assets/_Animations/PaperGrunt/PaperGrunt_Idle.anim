@@ -27,7 +27,7 @@ AnimationClip:
     - time: 1
       value: {fileID: 21300000, guid: 1a52d9e1453b8f74298eeeede5cf97c9, type: 3}
     attribute: m_Sprite
-    path: PaperGrunt_EnemySprite
+    path: EnemySprite_PaperGrunt
     classID: 212
     script: {fileID: 0}
     flags: 2
@@ -39,7 +39,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3449695388
+      path: 2415621180
       attribute: 0
       script: {fileID: 0}
       typeID: 212
@@ -62,7 +62,7 @@ AnimationClip:
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
     m_LoopTime: 1
-    m_LoopBlend: 0
+    m_LoopBlend: 1
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
     m_LoopBlendPositionXZ: 0

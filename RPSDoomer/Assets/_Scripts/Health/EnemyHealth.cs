@@ -13,6 +13,8 @@ public class EnemyHealth : Health
     public int maxScissorsHealth = 0;
     public int currentScissorsHealth;
 
+    public List<DamageType> vulnerableDamageTypes;
+
     public event Action RockHealthDepleted;
     public event Action RockMaxHealthChanged;
     public event Action PaperHealthDepleted;
@@ -30,41 +32,48 @@ public class EnemyHealth : Health
 
     public override void DamageHealth(int damageAmt, DamageType damageType)
     {
-        if (damageType == DamageType.Rock)
+        if (vulnerableDamageTypes.Count == 0)
+            return;
+
+        if (vulnerableDamageTypes.Contains(damageType))
         {
-            currentRockHealth -= damageAmt;
-
-            if (currentRockHealth <= 0)
+            if (damageType == DamageType.Rock)
             {
-                damageAmt += -1 * currentRockHealth;
-                currentRockHealth = 0;
-                RockHealthDepleted?.Invoke();
-            }
-        }
-        else if (damageType == DamageType.Paper)
-        {
-            currentPaperHealth -= damageAmt;
+                currentScissorsHealth -= damageAmt;
 
-            if (currentPaperHealth <= 0)
+                if (currentScissorsHealth <= 0)
+                {
+                    damageAmt += -1 * currentScissorsHealth;
+                    currentScissorsHealth = 0;
+                    ScissorsHealthDepleted?.Invoke();
+                }
+            }
+            else if (damageType == DamageType.Paper)
             {
-                damageAmt += -1 * currentPaperHealth;
-                currentPaperHealth = 0;
-                PaperHealthDepleted?.Invoke();
-            }
-        }
-        else if (damageType == DamageType.Scissors)
-        {
-            currentScissorsHealth -= damageAmt;
+                currentRockHealth -= damageAmt;
 
-            if (currentScissorsHealth <= 0)
+                if (currentRockHealth <= 0)
+                {
+                    damageAmt += -1 * currentRockHealth;
+                    currentRockHealth = 0;
+                    RockHealthDepleted?.Invoke();
+                }
+            }
+            else if (damageType == DamageType.Scissors)
             {
-                damageAmt += -1 * currentScissorsHealth;
-                currentScissorsHealth = 0;
-                ScissorsHealthDepleted?.Invoke();
+                currentPaperHealth -= damageAmt;
+
+                if (currentPaperHealth <= 0)
+                {
+                    damageAmt += -1 * currentPaperHealth;
+                    currentPaperHealth = 0;
+                    PaperHealthDepleted?.Invoke();
+                }
             }
+
+            ChangeHealth(-1 * damageAmt);
         }
 
-        ChangeHealth(damageAmt);
     }
 
     public void ChangeRockMaxHealth(int newMax)
@@ -101,5 +110,16 @@ public class EnemyHealth : Health
             currentScissorsHealth += maxScissorsHealth - currentScissorsHealth;
 
         ScissorsMaxHealthChanged?.Invoke();
+    }
+
+    public void AddVulnerableDamageType(DamageType newType)
+    {
+        if (!vulnerableDamageTypes.Contains(newType))
+            vulnerableDamageTypes.Add(newType);
+    }
+
+    public bool RemoveVulnerableDamageType(DamageType removeType)
+    {
+        return vulnerableDamageTypes.Remove(removeType);
     }
 }

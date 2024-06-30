@@ -21,6 +21,9 @@ public class PlayerRangeAttack : PlayerAttack
     public override void StartAttack()
     {
         Debug.Log("Ranged Attack sequence engaged");
+        
+        // Reset Timer
+        nextTimeToFire = Time.time + fireRate;
 
         if (PlayerTargetManager.instance.enemiesInPlayerAtkRange.Count == 0)
             return;
@@ -35,14 +38,13 @@ public class PlayerRangeAttack : PlayerAttack
             {
                 if (hit.transform == enemy.transform)
                 {
-                    // damage enemy
+                    // Damage enemy
                     Debug.Log($"{enemy.gameObject.name} has been hit", this);
+                    enemy.health.DamageHealth(damage, damageType);
                 }
 
             }
         }
 
-        // Reset Timer
-        nextTimeToFire = Time.time + fireRate;
     }
 }

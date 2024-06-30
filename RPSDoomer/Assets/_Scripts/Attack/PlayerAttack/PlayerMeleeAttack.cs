@@ -21,6 +21,9 @@ public class PlayerMeleeAttack : PlayerAttack
     public override void StartAttack()
     {
         Debug.Log("Melee Attack sequence engaged");
+        
+        // Reset Timer
+        nextTimeToFire = Time.time + fireRate;
 
         if (PlayerTargetManager.instance.enemiesInPlayerAtkRange.Count == 0)
             return;
@@ -30,9 +33,8 @@ public class PlayerMeleeAttack : PlayerAttack
         {
             // damage enemy
             Debug.Log($"{enemy.gameObject.name} has been hit", this);
+            enemy.health.DamageHealth(damage, damageType);
         }
 
-        // Reset Timer
-        nextTimeToFire = Time.time + fireRate;
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2580447167758045910}
   - component: {fileID: 1876900455529393831}
   - component: {fileID: 4014178357481459376}
+  - component: {fileID: 221027433886693499}
   - component: {fileID: 9021266771758395399}
   m_Layer: 10
   m_Name: Enemy
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7792becedaef4584eb297aabd50f0ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 0}
 --- !u!114 &4014178357481459376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -120,6 +122,19 @@ MonoBehaviour:
   currentPaperHealth: 0
   maxScissorsHealth: 0
   currentScissorsHealth: 0
+  vulnerableDamageTypes: 
+--- !u!114 &221027433886693499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3018498765794351539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed60d940541cb204bbf1e6a77e27d9fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &9021266771758395399
 Animator:
   serializedVersion: 5

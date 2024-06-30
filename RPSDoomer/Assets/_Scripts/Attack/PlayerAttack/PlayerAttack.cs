@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    public int damage = 1;
+    public DamageType damageType;
     public float forwardRange = 2f;
     public float verticalRange = 2f;
     public float fireRate = 2f;
@@ -31,6 +33,11 @@ public class PlayerAttack : MonoBehaviour
     public virtual void StartAttack()
     {
         Debug.LogError("Start Attack Function not implemented", this);
+    }
+
+    public void ChangeAttackDamageType(DamageType newType)
+    {
+        damageType = newType;
     }
 
     private void OnTriggerEnter(Collider other)

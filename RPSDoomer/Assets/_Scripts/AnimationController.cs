@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     public Health health;
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        if (animator == null)
+            animator = GetComponent<Animator>();
 
         if (health == null)
             health = GetComponent<Health>();
@@ -25,6 +26,11 @@ public class AnimationController : MonoBehaviour
     public void PlayAttackAnimation()
     {
         animator.SetTrigger("Attack");
+    }
+
+    public void PlaySpecialAnimation()
+    {
+        animator.SetTrigger("Special");
     }
 
     private void PlayDamagedAnimation()

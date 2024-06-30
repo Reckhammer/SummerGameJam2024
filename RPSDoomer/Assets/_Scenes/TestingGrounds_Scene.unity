@@ -604,6 +604,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2213962396858901634, guid: 588180963e4a11d488eca880b897eb89, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213962396858901634, guid: 588180963e4a11d488eca880b897eb89, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2213962396858901634, guid: 588180963e4a11d488eca880b897eb89, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 3346833424067256465, guid: 588180963e4a11d488eca880b897eb89, type: 3}
       propertyPath: m_Name
       value: Enemy_RockGrunt
@@ -657,11 +669,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 588180963e4a11d488eca880b897eb89, type: 3}
---- !u!224 &650333072 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224751068071680868, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
-  m_PrefabInstance: {fileID: 1225161961590332885}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -889,83 +896,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 6112603713365838058, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
   m_PrefabInstance: {fileID: 1225161961590332885}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &748151768
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 748151769}
-  - component: {fileID: 748151771}
-  - component: {fileID: 748151770}
-  m_Layer: 5
-  m_Name: PlayerHealthBarGroup
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &748151769
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748151768}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 650333072}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 500, y: -64}
-  m_SizeDelta: {x: 1000, y: 128}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &748151770
+--- !u!114 &748151770 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 2392237540424674017, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
+  m_PrefabInstance: {fileID: 1225161961590332885}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748151768}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0a74b370be796ad469bbc9696c7e3929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  segments: []
-  segmentPrefab: {fileID: 345345606511278126, guid: 51867c4af479f0342a7d9d8c60289e1e, type: 3}
---- !u!114 &748151771
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 748151768}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 25
-    m_Right: 0
-    m_Top: 25
-    m_Bottom: 0
-  m_ChildAlignment: 3
-  m_Spacing: -750
-  m_ChildForceExpandWidth: 1
-  m_ChildForceExpandHeight: 1
-  m_ChildControlWidth: 0
-  m_ChildControlHeight: 0
-  m_ChildScaleWidth: 0
-  m_ChildScaleHeight: 0
-  m_ReverseArrangement: 0
 --- !u!1001 &796133957
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1017,10 +958,6 @@ PrefabInstance:
     - target: {fileID: 6077399935709527855, guid: 96a872db87f95a8428baa4cd14895e1e, type: 3}
       propertyPath: m_Name
       value: Enemy_ScissorsGrunt
-      objectReference: {fileID: 0}
-    - target: {fileID: 6197874868002895249, guid: 96a872db87f95a8428baa4cd14895e1e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1238,6 +1175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_PaperGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 7458217706147290136, guid: 68ca6e38f6b0afd499c938929a467a79, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8398055300410081930, guid: 68ca6e38f6b0afd499c938929a467a79, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.33
@@ -1453,6 +1394,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1757251813 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2517244305134532637, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
+  m_PrefabInstance: {fileID: 1225161961590332885}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1757251815 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1516578194487363471, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
@@ -1943,10 +1889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 224751068071680868, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 748151769}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a31a6af2dee2bb4d8d4fe0694a1227e, type: 3}
 --- !u!1001 &6193984999673061423
@@ -1961,10 +1904,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1962273488}
-    - target: {fileID: 5508908356101966597, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
+    - target: {fileID: 5211779030340132758, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
+      propertyPath: hudElements
+      value: 
+      objectReference: {fileID: 1757251813}
     - target: {fileID: 5526121529618820496, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: animator
       value: 
@@ -1973,10 +1916,6 @@ PrefabInstance:
       propertyPath: uiHealthBar
       value: 
       objectReference: {fileID: 748151770}
-    - target: {fileID: 7025736106187985964, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7419855248250308321, guid: 814d2c97591a08145b70f45eb056cdec, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.5711093

@@ -47,6 +47,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_PaperGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 3551639213956236568, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      propertyPath: segmentPrefab
+      value: 
+      objectReference: {fileID: 5859764140527295794, guid: 6e21ed61fcea6d84fabe936ef824c9aa, type: 3}
     - target: {fileID: 4014178357481459376, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: maxPaperHealth
       value: 2

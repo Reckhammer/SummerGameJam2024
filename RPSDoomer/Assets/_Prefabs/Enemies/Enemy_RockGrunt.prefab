@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_RockGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 3551639213956236568, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      propertyPath: segmentPrefab
+      value: 
+      objectReference: {fileID: 4626551645008776086, guid: 7df7b18473f918447ab2e04f3b65409e, type: 3}
     - target: {fileID: 4014178357481459376, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: maxRockHealth
       value: 3

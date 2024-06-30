@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy_ScissorsGrunt
       objectReference: {fileID: 0}
+    - target: {fileID: 3551639213956236568, guid: 3434d700875a48b428e46469eabc246b, type: 3}
+      propertyPath: segmentPrefab
+      value: 
+      objectReference: {fileID: 136622076292523465, guid: 7897bd25891e1d248b16b46a665eb005, type: 3}
     - target: {fileID: 4014178357481459376, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: maxScissorsHealth
       value: 2
@@ -26,15 +30,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.722
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 8.44
       objectReference: {fileID: 0}
     - target: {fileID: 4451511509960890318, guid: 3434d700875a48b428e46469eabc246b, type: 3}
       propertyPath: m_LocalRotation.w

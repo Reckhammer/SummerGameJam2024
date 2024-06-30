@@ -24,10 +24,16 @@ public class EnemyHealth : Health
 
     protected override void InitHealth()
     {
-        currentHealth = maxRockHealth + maxPaperHealth + maxScissorsHealth;
+        maxHealth = currentHealth = maxRockHealth + maxPaperHealth + maxScissorsHealth;
         currentRockHealth = maxRockHealth;
         currentPaperHealth = maxPaperHealth;
         currentScissorsHealth = maxScissorsHealth;
+
+        if (uiHealthBar != null)
+        {
+            uiHealthBar.SetMaxHealth(maxHealth);
+            uiHealthBar.SetHealth(currentHealth);
+        }
     }
 
     public override void DamageHealth(int damageAmt, DamageType damageType)

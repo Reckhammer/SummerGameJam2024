@@ -28,13 +28,13 @@ public class DelayUIVisibility : MonoBehaviour
     private IEnumerator FadeInCoroutine()
     {
         yield return new WaitForSeconds(initialDelay);
-        
+
         float currentTime = 0f;
 
         while (myImage.color.a < 1f)
         {
-            currentTime += Time.deltaTime;
             myImage.color = new Color(1f, 1f, 1f, Mathf.Lerp(0f, 1f, currentTime / fadeInTime));
+            currentTime += Time.deltaTime;
             
             yield return null;
         }

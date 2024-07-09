@@ -1135,7 +1135,7 @@ RectTransform:
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
   m_AnchoredPosition: {x: -198, y: 88}
-  m_SizeDelta: {x: 396, y: 176}
+  m_SizeDelta: {x: 183, y: 88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1907595976
 MonoBehaviour:
@@ -1243,8 +1243,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07f455e693cdb364d80a72799247b389, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialDelay: 5
-  fadeInTime: 5
+  initialDelay: 10
+  fadeInTime: 15
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
